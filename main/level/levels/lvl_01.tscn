@@ -70,18 +70,22 @@ alignment = 1
 
 [node name="Self Discipline" parent="UI Layer/Soft Skills" unique_id=87332864 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "self_discipline"
 skill_name = "Self Discipline"
 
 [node name="Leadership" parent="UI Layer/Soft Skills" unique_id=1629646140 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "leadership"
 skill_name = "Leadership"
 
 [node name="Communication" parent="UI Layer/Soft Skills" unique_id=1268992011 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "communication"
 skill_name = "Communication"
 
 [node name="Ethics and Morals" parent="UI Layer/Soft Skills" unique_id=1533819965 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "ethics_and_morals"
 skill_name = "Ethics & Morals"
 
 [node name="Hard Skills" type="BoxContainer" parent="UI Layer" unique_id=1502478342]
@@ -101,16 +105,20 @@ alignment = 1
 
 [node name="Programming" parent="UI Layer/Hard Skills" unique_id=627363864 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "programming"
 skill_name = "Programming"
 
 [node name="Art" parent="UI Layer/Hard Skills" unique_id=1745376208 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "art"
 skill_name = "Art"
 
 [node name="Sound" parent="UI Layer/Hard Skills" unique_id=489305582 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "sound"
 skill_name = "Sound"
 
 [node name="Design" parent="UI Layer/Hard Skills" unique_id=371448165 instance=ExtResource("2_vvkps")]
 layout_mode = 2
+skill_id = "design"
 skill_name = "Design"

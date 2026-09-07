@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c84ettwq1bmjh" path="res://main/level/skill.gd" id="1_1d0d1"]
 
-[node name="Skill" type="BoxContainer" unique_id=1629646140 node_paths=PackedStringArray("purchase_btn", "cost_label")]
+[node name="Skill" type="BoxContainer" unique_id=1629646140 node_paths=PackedStringArray("purchase_btn", "cost_label") groups=["skills"]]
 size_flags_horizontal = 3
 theme_override_constants/separation = 25
 alignment = 1

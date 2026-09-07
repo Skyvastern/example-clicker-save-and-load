@@ -2,6 +2,7 @@ extends BoxContainer
 class_name Skill
 
 @export_group("Stats")
+@export var skill_id: String = "no_idea"
 @export var skill_name: String = "No Idea"
 @export var cost: int = 10
 @export var cost_of_learning_upgrade: int = 10
@@ -27,6 +28,8 @@ func _on_purchase_btn_pressed() -> void:
 	cost += cost_of_learning_upgrade
 	
 	_update_ui()
+	
+	DataManager.save_game()
 
 
 func _update_ui() -> void:

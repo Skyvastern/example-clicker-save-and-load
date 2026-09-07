@@ -43,11 +43,15 @@ func _exit_tree() -> void:
 
 func _ready() -> void:
 	work_btn.pressed.connect(_on_work_btn_pressed)
+	
+	DataManager.load_game()
 
 
 func _on_work_btn_pressed() -> void:
 	focus += learning
 	xp += learning
+	
+	DataManager.save_game()
 
 
 func _update_ui() -> void:
