@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://xk0qnposfwf1"]
 
 [ext_resource type="Script" uid="uid://clrb1ev5ks4tm" path="res://main/level/level.gd" id="1_3n0an"]
+[ext_resource type="PackedScene" uid="uid://ogqswtv0srgr" path="res://main/level/skill.tscn" id="2_vvkps"]
 
-[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "xp_label")]
+[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "xp_label", "increase_amt_label")]
 script = ExtResource("1_3n0an")
 work_btn = NodePath("UI Layer/Action/Work")
 xp_label = NodePath("UI Layer/Action/XP")
+increase_amt_label = NodePath("UI Layer/Action/Increase Amount")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=636856542]
 
@@ -35,3 +37,72 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Work"
+
+[node name="Increase Amount" type="Label" parent="UI Layer/Action" unique_id=1040373828]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Increase Amount: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Soft Skills" type="BoxContainer" parent="UI Layer" unique_id=469658875]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = -476.0
+offset_right = 896.0
+offset_bottom = -340.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Self Discipline" parent="UI Layer/Soft Skills" unique_id=87332864 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Self Discipline"
+
+[node name="Leadership" parent="UI Layer/Soft Skills" unique_id=1629646140 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Leadership"
+
+[node name="Communication" parent="UI Layer/Soft Skills" unique_id=1268992011 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Communication"
+
+[node name="Ethics and Morals" parent="UI Layer/Soft Skills" unique_id=1533819965 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Ethics & Morals"
+
+[node name="Hard Skills" type="BoxContainer" parent="UI Layer" unique_id=1502478342]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = 348.0
+offset_right = 896.0
+offset_bottom = 484.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Programming" parent="UI Layer/Hard Skills" unique_id=627363864 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Programming"
+
+[node name="Art" parent="UI Layer/Hard Skills" unique_id=1745376208 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Art"
+
+[node name="Sound" parent="UI Layer/Hard Skills" unique_id=489305582 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Sound"
+
+[node name="Design" parent="UI Layer/Hard Skills" unique_id=371448165 instance=ExtResource("2_vvkps")]
+layout_mode = 2
+skill_name = "Design"

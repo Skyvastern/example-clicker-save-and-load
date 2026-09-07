@@ -1,12 +1,35 @@
 extends Node
 class_name Level
 
-var xp: int = 0
-var increase_amt: int = 1
+signal xp_changed
+signal increase_amt_changed
+
+var xp: int = 0:
+	set(value):
+		xp = value
+		xp_changed.emit()
+		
+		_update_ui()
+
+var increase_amt: int = 1:
+	set(value):
+		increase_amt = value
+		increase_amt_changed.emit()
+		
+		_update_ui()
 
 @export_group("Action")
 @export var work_btn: Button
 @export var xp_label: Label
+@export var increase_amt_label: Label
+
+
+func _enter_tree() -> void:
+	Global.level = self
+
+
+func _exit_tree() -> void:
+	Global.level = null
 
 
 func _ready() -> void:
@@ -15,4 +38,13 @@ func _ready() -> void:
 
 func _on_work_btn_pressed() -> void:
 	xp += increase_amt
-	xp_label.text = str(xp) + " XP"
+
+
+func _update_ui() -> void:
+	xp_label.text = "%s XP" % xp
+	increase_amt_label.text = "Increase Amount: %s" % increase_amt
+
+
+func gain_increase_amt(cost: int) -> void:
+	xp -= cost
+	increase_amt += 1

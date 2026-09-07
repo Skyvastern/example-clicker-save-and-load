@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ogqswtv0srgr"]
+
+[ext_resource type="Script" uid="uid://c84ettwq1bmjh" path="res://main/level/skill.gd" id="1_1d0d1"]
+
+[node name="Skill" type="BoxContainer" unique_id=1629646140 node_paths=PackedStringArray("purchase_btn", "cost_label")]
+size_flags_horizontal = 3
+theme_override_constants/separation = 25
+alignment = 1
+vertical = true
+script = ExtResource("1_1d0d1")
+purchase_btn = NodePath("Purchase")
+cost_label = NodePath("Cost")
+
+[node name="Purchase" type="Button" parent="." unique_id=1592231250]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Skill"
+
+[node name="Cost" type="Label" parent="." unique_id=1373729734]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Upgrade for 10 XP"
+horizontal_alignment = 1
