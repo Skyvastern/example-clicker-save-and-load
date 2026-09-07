@@ -1,6 +1,7 @@
 extends Node
 
 const SAVE_PATH: String = "user://data.save"
+const SAVE_PASSWORD: String = "HiThere!-_-!erehTiH"
 
 var data: Dictionary = {
 	"progress": {
@@ -37,14 +38,26 @@ func _load_data_from_disk() -> void:
 		push_warning("No existing save exists")
 		return
 	
-	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var save_file: FileAccess = FileAccess.open_encrypted_with_pass(SAVE_PATH, FileAccess.READ, SAVE_PASSWORD)
+	if save_file == null:
+		push_error("Save file decryption failed, or the file is corrupted.")
+		return
+	
 	var json: String = save_file.get_as_text()
 	var loaded_data: Dictionary = JSON.parse_string(json)
-	data = loaded_data
+	
+	if loaded_data is Dictionary:
+		data = loaded_data
+	else:
+		push_error("Saved data is not in valid format.")
 
 
 func _save_data_to_disk() -> void:
-	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var save_file: FileAccess = FileAccess.open_encrypted_with_pass(SAVE_PATH, FileAccess.WRITE, SAVE_PASSWORD)
+	if save_file == null:
+		push_error("Saving failed, unable to encrypt.")
+		return
+	
 	var json: String = JSON.stringify(data)
 	save_file.store_line(json)
 # --------------------------Filesystem Save/Load----------------------------
