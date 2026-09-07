@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://xk0qnposfwf1"]
+
+[ext_resource type="Script" uid="uid://clrb1ev5ks4tm" path="res://main/level/level.gd" id="1_3n0an"]
+
+[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "xp_label")]
+script = ExtResource("1_3n0an")
+work_btn = NodePath("UI Layer/Action/Work")
+xp_label = NodePath("UI Layer/Action/XP")
+
+[node name="UI Layer" type="CanvasLayer" parent="." unique_id=636856542]
+
+[node name="Action" type="BoxContainer" parent="UI Layer" unique_id=1230688198]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -110.0
+offset_right = 192.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+vertical = true
+
+[node name="XP" type="Label" parent="UI Layer/Action" unique_id=962813364]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "0 XP"
+horizontal_alignment = 1
+
+[node name="Work" type="Button" parent="UI Layer/Action" unique_id=513085118]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Work"
