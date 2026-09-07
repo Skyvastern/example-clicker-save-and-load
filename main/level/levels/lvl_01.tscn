@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://clrb1ev5ks4tm" path="res://main/level/level.gd" id="1_3n0an"]
 [ext_resource type="PackedScene" uid="uid://ogqswtv0srgr" path="res://main/level/skill.tscn" id="2_vvkps"]
 
-[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "focus_label", "learning_label")]
+[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "focus_label", "learning_label", "xp_label")]
 script = ExtResource("1_3n0an")
 work_btn = NodePath("UI Layer/Action/Work")
 focus_label = NodePath("UI Layer/Action/Focus")
 learning_label = NodePath("UI Layer/Action/Learning")
+xp_label = NodePath("UI Layer/Action/XP")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=636856542]
 
@@ -42,6 +43,13 @@ text = "Work"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Learning: 1 Focus/Click"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XP" type="Label" parent="UI Layer/Action" unique_id=296656726]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Experience: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
