@@ -19,5 +19,5 @@ text = "Skill"
 [node name="Cost" type="Label" parent="." unique_id=1373729734]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "Upgrade for 10 XP"
+text = "Upgrade for 10 Focus"
 horizontal_alignment = 1

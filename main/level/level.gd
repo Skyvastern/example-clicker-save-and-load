@@ -1,27 +1,27 @@
 extends Node
 class_name Level
 
-signal xp_changed
-signal increase_amt_changed
+signal focus_changed
+signal learning_changed
 
-var xp: int = 0:
+var focus: int = 0:
 	set(value):
-		xp = value
-		xp_changed.emit()
+		focus = value
+		focus_changed.emit()
 		
 		_update_ui()
 
-var increase_amt: int = 1:
+var learning: int = 1:
 	set(value):
-		increase_amt = value
-		increase_amt_changed.emit()
+		learning = value
+		learning_changed.emit()
 		
 		_update_ui()
 
 @export_group("Action")
 @export var work_btn: Button
-@export var xp_label: Label
-@export var increase_amt_label: Label
+@export var focus_label: Label
+@export var learning_label: Label
 
 
 func _enter_tree() -> void:
@@ -37,14 +37,14 @@ func _ready() -> void:
 
 
 func _on_work_btn_pressed() -> void:
-	xp += increase_amt
+	focus += learning
 
 
 func _update_ui() -> void:
-	xp_label.text = "%s XP" % xp
-	increase_amt_label.text = "Increase Amount: %s" % increase_amt
+	focus_label.text = "%s F" % focus
+	learning_label.text = "Learning: %s Focus/Click" % learning
 
 
-func gain_increase_amt(cost: int) -> void:
-	xp -= cost
-	increase_amt += 1
+func increase_learning_speed(cost: int) -> void:
+	focus -= cost
+	learning += 1

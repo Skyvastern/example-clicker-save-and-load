@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://clrb1ev5ks4tm" path="res://main/level/level.gd" id="1_3n0an"]
 [ext_resource type="PackedScene" uid="uid://ogqswtv0srgr" path="res://main/level/skill.tscn" id="2_vvkps"]
 
-[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "xp_label", "increase_amt_label")]
+[node name="Level" type="Node" unique_id=508801850 node_paths=PackedStringArray("work_btn", "focus_label", "learning_label")]
 script = ExtResource("1_3n0an")
 work_btn = NodePath("UI Layer/Action/Work")
-xp_label = NodePath("UI Layer/Action/XP")
-increase_amt_label = NodePath("UI Layer/Action/Increase Amount")
+focus_label = NodePath("UI Layer/Action/Focus")
+learning_label = NodePath("UI Layer/Action/Learning")
 
 [node name="UI Layer" type="CanvasLayer" parent="." unique_id=636856542]
 
@@ -27,10 +27,10 @@ theme_override_constants/separation = 25
 alignment = 1
 vertical = true
 
-[node name="XP" type="Label" parent="UI Layer/Action" unique_id=962813364]
+[node name="Focus" type="Label" parent="UI Layer/Action" unique_id=962813364]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "0 XP"
+text = "0 F"
 horizontal_alignment = 1
 
 [node name="Work" type="Button" parent="UI Layer/Action" unique_id=513085118]
@@ -38,10 +38,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Work"
 
-[node name="Increase Amount" type="Label" parent="UI Layer/Action" unique_id=1040373828]
+[node name="Learning" type="Label" parent="UI Layer/Action" unique_id=1040373828]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Increase Amount: 1"
+text = "Learning: 1 Focus/Click"
 horizontal_alignment = 1
 vertical_alignment = 1
 

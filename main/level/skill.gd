@@ -4,7 +4,7 @@ class_name Skill
 @export_group("Stats")
 @export var skill_name: String = "No Idea"
 @export var cost: int = 10
-@export var cost_increase_amt: int = 10
+@export var cost_of_learning_upgrade: int = 10
 
 @export_group("UI")
 @export var purchase_btn: Button
@@ -12,24 +12,24 @@ class_name Skill
 
 
 func _ready() -> void:
-	Global.level.xp_changed.connect(_on_xp_changed)
+	Global.level.focus_changed.connect(_on_focus_changed)
 	purchase_btn.pressed.connect(_on_purchase_btn_pressed)
 	
 	_update_ui()
 
 
-func _on_xp_changed() -> void:
+func _on_focus_changed() -> void:
 	_update_ui()
 
 
 func _on_purchase_btn_pressed() -> void:
-	Global.level.gain_increase_amt(cost)
-	cost += cost_increase_amt
+	Global.level.increase_learning_speed(cost)
+	cost += cost_of_learning_upgrade
 	
 	_update_ui()
 
 
 func _update_ui() -> void:
-	purchase_btn.disabled = cost > Global.level.xp
+	purchase_btn.disabled = cost > Global.level.focus
 	purchase_btn.text = skill_name
-	cost_label.text = "Purchase for %s XP" % [cost]
+	cost_label.text = "Purchase for %s Focus" % [cost]
